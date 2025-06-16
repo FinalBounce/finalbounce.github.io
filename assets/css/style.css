@@ -238,27 +238,3 @@ html, body {
     transform: translateX(0);
   }
 }
-
-
-/* Background gradient */
-body {
-  background: linear-gradient(135deg, #ff5f8d, #7f60f9);
-  background-attachment: fixed;
-  background-size: cover;
-  color: #fff;
-}
-.intro {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 2em;
-  border-radius: 1em;
-  max-width: 800px;
-  margin: 2em auto;
-}
-nav a {
-  color: #fff;
-}
-footer {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 1em;
-  text-align: center;
-}
