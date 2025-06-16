@@ -108,3 +108,10 @@ footer {
     font-size: 1.5em;
   }
 }
+
+/* Cacher le logo quand menu mobile est actif */
+@media (max-width: 768px) {
+  .logo-container.hide-logo {
+    display: none;
+  }
+}
