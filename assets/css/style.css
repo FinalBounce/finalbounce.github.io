@@ -102,3 +102,30 @@ footer {
     margin: 1em 0;
   }
 }
+
+
+/* Logo + texte */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+.logo-img {
+  height: 60px;
+}
+.logo-text {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+}
