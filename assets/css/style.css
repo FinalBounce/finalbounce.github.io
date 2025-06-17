@@ -166,7 +166,7 @@ footer {
     overflow-y: auto;
     overscroll-behavior: contain; /* bloque scroll body sur iOS */
     padding: 0; /* on reset les padding suspects */
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
       /* 🧠 Scroll activé */
     overflow-y: auto;
@@ -179,7 +179,7 @@ footer {
     display: block;
     width: 100%;
     text-align: center;
-    margin: 0;
+    margin: 0.5em 0;
     padding: 0.5em 0;
   }
 
