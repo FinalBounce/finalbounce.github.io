@@ -90,7 +90,8 @@ footer {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
+  max-height: 100dvh;
   background-color: white;
   flex-direction: column;
   align-items: center;
@@ -100,6 +101,7 @@ footer {
   z-index: 9;
   overflow-x: hidden;
   overflow-y: auto;  
+  -webkit-overflow-scrolling: touch; /* ✨ smooth scroll sur iOS */
 }
   .nav-links li {
     opacity: 0;
