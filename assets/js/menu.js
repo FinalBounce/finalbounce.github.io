@@ -1,9 +1,9 @@
 
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
-const navLinks = document.querySelectorAll('.nav-links li');
+const body = document.querySelector('body');
 
 burger.addEventListener('click', () => {
   nav.classList.toggle('nav-active');
-  document.body.classList.toggle('no-scroll'); // ← empêche le fond de bouger
+  body.classList.toggle('noscroll');
 });
