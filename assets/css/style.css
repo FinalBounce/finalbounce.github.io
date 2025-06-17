@@ -176,7 +176,7 @@ footer {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    padding-top: 9,5em !important;
+    padding-top: 9em !important;
     z-index: 99998;
   }
 
