@@ -96,7 +96,7 @@ footer {
   .burger {
     display: block;
   }
-  .nav-active {
+  .nav-links.nav-active {
     transform: translateX(0%);
   }
   .nav-active li {
