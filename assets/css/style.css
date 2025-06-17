@@ -1,264 +1,179 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;   /* bloque tout scroll horizontal */
 }
+
 * {
   box-sizing: border-box;
   word-break: break-word;
 }
+
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, #f9f9f9, #e7e9ec);
   color: #222;
 }
+
+/* =========================
+   HEADER & NAVBAR (DESKTOP)
+   ========================= */
 header {
-  background: white;
+  background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.2em 2em;
+  position: relative;      /* pour z-index */
+  z-index: 9999;           /* logo + nav au-dessus du menu mobile */
 }
-.logo {
-  font-weight: bold;
-  font-size: 1.4em;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5em;
-}
-.nav-links li {
-  transition: 0.3s;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.nav-links a:hover {
-  color: #f00;
-}
-.burger {
-  display: none;
-  cursor: pointer;
-}
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px;
-  transition: 0.3s;
-}
-.hero {
-  background: linear-gradient(145deg, #ff5656, #ff8c8c);
-  color: white;
-  text-align: center;
-  padding: 6em 2em;
-}
-.hero h1 {
-  font-size: 3em;
-  margin: 0.2em 0;
-}
-.hero p {
-  font-size: 1.2em;
-}
-.intro {
-  text-align: center;
-  padding: 4em 2em;
-}
-.intro h2 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-}
-footer {
-  text-align: center;
-  padding: 2em;
-  background: #f1f1f1;
-  color: #555;
-  font-size: 0.9em;
-}
-@media (max-width: 768px) {
-.nav-links {
-  width: 100%;
-  box-sizing: border-box;
-  position: fixed;
-  inset: 0; /* remplace top: 0; right: 0; height: 100%, etc. */
-  background-color: white;
-  flex-direction: column;
-  align-items: center;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  padding-top: 5em;
-  z-index: 1000;
-
-  /* Scroll clean */
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain; /* 🛡️ bloque le scroll du body sur iOS */
-}
-  .nav-links li {
-    opacity: 0;
-  }
-  .burger {
-    display: block;
-  }
-  .nav-links.nav-active {
-    transform: translateX(0%);
-  }
-  .nav-active li {
-    opacity: 1;
-    margin: 1em 0;
-  }
-}
-
 
 /* Logo + texte */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 0.6em;
+  gap: .8em;
 }
+
 .logo-img {
-  height: 42px;
+  height: 60px;            /* taille logo desktop */
 }
-  height: 60px;
-}
+
 .logo-text {
-  font-size: 1.1em;
-  font-weight: 700;
-}
   font-size: 1.3em;
   font-weight: 700;
 }
 
-/* Responsive */
+/* Liens desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  z-index: 1000;           /* sous la navbar mais au-dessus du reste */
+}
+
+.nav-links li {
+  transition: 0.3s;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #f00;
+}
+
+/* Burger (caché sur desktop) */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px;
+  transition: .3s;
+}
+
+/* =========================
+   HERO / CONTENU / FOOTER
+   ========================= */
+.hero {
+  background: linear-gradient(145deg,#ff5656,#ff8c8c);
+  color: #fff;
+  text-align: center;
+  padding: 6em 2em;
+}
+
+.hero h1 { font-size: 3em; margin: .2em 0; }
+.hero p  { font-size: 1.2em; }
+
+.intro {
+  text-align: center;
+  padding: 4em 2em;
+}
+
+.intro h2 { font-size: 2em; margin-bottom: .5em; }
+
+footer {
+  text-align: center;
+  padding: 2em;
+  background: #f1f1f1;
+  color: #555;
+  font-size: .9em;
+}
+
+/* =========================
+   MOBILE (≤ 768 px)
+   ========================= */
 @media (max-width: 768px) {
-  .logo-container {
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 0.5em;
-  }
-  .navbar {
-    flex-direction: column;
-  }
-}
 
-
-/* Logo spacing */
-.logo-container {
-  gap: 1.2em;
-}
-
-/* Mobile fixes */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .logo-container {
-    justify-content: flex-start;
-    padding-left: 1rem;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  .burger {
-    align-self: flex-end;
-    margin-right: 1rem;
-  }
-
-  .nav-links {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
-
-  .nav-links li {
-    padding: 0.3em 0;
-  }
-}
-body {
-  overflow-x: hidden; /* 🔒 empêche le scroll horizontal */
-}
-
-@media (max-width: 768px) {
+  /* Réorganisation header */
   .navbar {
     flex-direction: column;
     align-items: center;
     padding: 1em;
-    position: relative;
-    z-index: 9999;
   }
 
   .logo-container {
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 0.2em;
+    gap: .3em;
+    margin-bottom: .5em;
   }
 
-  .logo-img {
-    height: 55px;
-    max-width: 100%;
-  }
+  .logo-img  { height: 55px; max-width: 100%; }
+  .logo-text { font-size: 1.1em; }
 
-  .logo-text {
-    font-size: 1.1em;
-    word-break: break-word;
-  }
-
+  /* Burger visible */
   .burger {
+    display: block;
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 10;
+    z-index: 10000;
   }
 
+  /* Menu latéral mobile */
   .nav-links {
+    position: fixed;
+    inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
+    height: 100vh;
     width: 100vw;
-    overflow-x: hidden;
-  }
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-@media (max-width: 768px) {
-  .nav-links {
-    overflow-x: hidden;
-    max-width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding-top: 6em;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+    overflow-y: auto;
+    overscroll-behavior: contain; /* bloque scroll body sur iOS */
   }
 
-  body {
-    overflow-x: hidden;
-  }
+  .nav-links li { margin: 1em 0; }
 
-  html {
-    overflow-x: hidden;
-  }
-
-  * {
-    max-width: 100vw;
+  /* Menu montré lorsqu'il reçoit la classe .nav-active */
+  .nav-links.nav-active {
+    transform: translateX(0);
   }
 }
-.no-scroll {
-  height: 100vh;
-  overflow: hidden;
-}
+
+/* =========================
+   UTILITAIRES
+   ========================= */
+
+/* Désactive le scroll de fond quand le menu est ouvert */
 body.noscroll {
   height: 100vh;
   overflow: hidden;
