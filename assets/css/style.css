@@ -81,7 +81,7 @@ footer {
 .nav-links {
   width: 100vw;
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
