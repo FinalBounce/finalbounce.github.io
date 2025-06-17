@@ -196,6 +196,8 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 1em;
+    position: relative;
+    z-index: 9999;
   }
 
   .logo-container {
