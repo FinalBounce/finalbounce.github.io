@@ -257,3 +257,7 @@ html, body {
   height: 100vh;
   overflow: hidden;
 }
+body.noscroll {
+  height: 100vh;
+  overflow: hidden;
+}
