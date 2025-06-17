@@ -172,3 +172,45 @@ footer {
     padding: 0.3em 0;
   }
 }
+body {
+  overflow-x: hidden; /* 🔒 empêche le scroll horizontal */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+  }
+
+  .logo-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.2em;
+  }
+
+  .logo-img {
+    height: 55px;
+    max-width: 100%;
+  }
+
+  .logo-text {
+    font-size: 1.1em;
+    word-break: break-word;
+  }
+
+  .burger {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 10;
+  }
+
+  .nav-links {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
