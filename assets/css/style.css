@@ -176,7 +176,7 @@ footer {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    padding-top: 9em !important;
+    padding-top: 10em !important;
   }
 
   .nav-links li {
