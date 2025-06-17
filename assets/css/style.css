@@ -99,6 +99,7 @@ footer {
   padding-top: 5em;
   z-index: 9;
   overflow-x: hidden;
+  overflow-y: auto;  
 }
   .nav-links li {
     opacity: 0;
