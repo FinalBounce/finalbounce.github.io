@@ -124,7 +124,6 @@ footer {
     align-items: center;
     padding: 1em;
     position: relative;
-    z-index: 100;
   }
 
   .logo-container {
@@ -140,13 +139,13 @@ footer {
   .logo-img  {
     height: 55px;
     max-width: 100%;
+    z-index: 99999;
   }
 
   .logo-text {
     font-size: 1.1em;
     text-align: center;
     width: 100%;
-    z-index: 150;
   }
 
   .burger {
@@ -176,8 +175,7 @@ footer {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    padding-top: 9em !important;
-    z-index: 99998;
+    padding-top: 8em !important;
   }
 
   .nav-links li {
