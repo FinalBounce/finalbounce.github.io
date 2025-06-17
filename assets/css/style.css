@@ -153,7 +153,7 @@ footer {
   }
 
   .nav-links {
-        position: fixed;
+    position: fixed;
     inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
     height: 100vh;
     width: 100vw;
@@ -170,12 +170,13 @@ footer {
   .nav-links li {
     display: block;
     width: 100%;
+    text-align: center;
     margin: 0;
     padding: 0.8em 0;
   }
 
   .nav-links a {
-    display: block;
+    display: inline-block;
     width: 100%;
     text-align: center;
     padding: 0.8em 0;
