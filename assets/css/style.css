@@ -76,17 +76,19 @@ footer {
 }
 @media (max-width: 768px) {
   .nav-links {
+    width: 100vw;
+    box-sizing: border-box;
     position: absolute;
+    top: 0;
     right: 0;
     height: 100vh;
-    top: 0;
-    background-color: #fff;
+    background-color: white;
     flex-direction: column;
     align-items: center;
-    width: 60%;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in-out;
     padding-top: 5em;
+    z-index: 9;
   }
   .nav-links li {
     opacity: 0;
