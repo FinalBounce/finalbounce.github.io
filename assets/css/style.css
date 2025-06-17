@@ -92,6 +92,7 @@ footer {
   transition: transform 0.3s ease-in-out;
   padding-top: 5em;
   z-index: 9;
+  overflow-x: hidden;
 }
   .nav-links li {
     opacity: 0;
