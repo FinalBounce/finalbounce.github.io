@@ -122,6 +122,8 @@ footer {
     flex-direction: column;
     align-items: center;
     padding: 1em;
+    position: relative;
+    z-index: 10000;
   }
 
   .logo-container {
@@ -131,6 +133,8 @@ footer {
     justify-content: center;
     gap: .3em;
     margin-bottom: .5em;
+    position: relative;
+    z-index: 10001;
   }
 
   .logo-img  {
