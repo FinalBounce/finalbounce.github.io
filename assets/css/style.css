@@ -168,6 +168,11 @@ footer {
     padding: 0; /* on reset les padding suspects */
     margin: 0 auto;
     text-align: center;
+      /* 🧠 Scroll activé */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
 
   .nav-links li {
