@@ -165,6 +165,9 @@ footer {
     transition: transform .3s ease-in-out;
     overflow-y: auto;
     overscroll-behavior: contain; /* bloque scroll body sur iOS */
+    padding: 0; /* on reset les padding suspects */
+    margin: 0 auto;
+    text-align: center;
   }
 
   .nav-links li {
@@ -172,14 +175,15 @@ footer {
     width: 100%;
     text-align: center;
     margin: 0;
-    padding: 0.8em 0;
+    padding: 0.5em 0;
   }
 
   .nav-links a {
     display: inline-block;
     width: 100%;
     text-align: center;
-    padding: 0.8em 0;
+    padding: 0;
+    margin: 0;
     color: #333;
   }
 
