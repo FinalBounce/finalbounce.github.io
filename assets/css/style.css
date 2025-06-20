@@ -250,4 +250,10 @@ body.noscroll {
       padding-top: 160px !important; /* ajuste si besoin (150, 180…) */
     }
   }
+  
+    .logo-container {
+      margin-top: 20px; /* ou 30px si tu veux plus d’espace */
+    }
+  }
+}
 }
