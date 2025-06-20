@@ -120,9 +120,9 @@ footer {
 @media (max-width: 768px) {
 
   body {
-    padding-top: env(safe-area-inset-top);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top, 20px);
   }
   
   .navbar {
@@ -140,6 +140,7 @@ footer {
     gap: .3em;
     margin-bottom: .5em;
     position: relative;
+    padding-top: env(safe-area-inset-top, 20px); /* pour Safari, sinon fallback à 20px */
   }
 
   .logo-img  {
@@ -159,6 +160,7 @@ footer {
     position: absolute;
     right: 20px;
     top: 20px;
+    z-index: 99999;
   }
 
   .nav-links {
@@ -181,8 +183,7 @@ footer {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
-    padding-top: 7em !important;
-    margin-top: 2em !important;
+    padding-top: calc(env(safe-area-inset-top, 20px) + 5em); /* safe area + espace visuel */
   }
 
   .nav-links li {
