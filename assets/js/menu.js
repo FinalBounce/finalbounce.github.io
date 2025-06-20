@@ -5,4 +5,5 @@ const body   = document.body;
 burger.addEventListener('click', () => {
   nav.classList.toggle('nav-active');
   body.classList.toggle('noscroll');
+  document.body.classList.toggle('nav-open');
 });
