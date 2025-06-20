@@ -244,3 +244,10 @@ body.noscroll {
 * {
   max-width: 100vw;
 }
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .nav-links {
+      padding-top: 160px !important; /* ajuste si besoin (150, 180…) */
+    }
+  }
+}
