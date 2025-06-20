@@ -124,7 +124,7 @@ footer {
     padding-right: env(safe-area-inset-right);
     padding-top: env(safe-area-inset-top, 20px);
   }
-  
+
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -143,7 +143,7 @@ footer {
     gap: .3em;
     margin-bottom: .5em;
     position: relative;
-    padding-top: env(safe-area-inset-top, 20px); /* pour Safari, sinon fallback à 20px */
+    padding-top: env(safe-area-inset-top, 20px);
   }
 
   .logo-img  {
@@ -168,7 +168,7 @@ footer {
 
   .nav-links {
     position: fixed;
-    inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
+    inset: 0;
     height: 100vh;
     width: 100vw;
     flex-direction: column;
@@ -177,16 +177,13 @@ footer {
     transform: translateX(100%);
     transition: transform .3s ease-in-out;
     overflow-y: auto;
-    overscroll-behavior: contain; /* bloque scroll body sur iOS */
-    padding: 0; /* on reset les padding suspects */
+    overscroll-behavior: contain;
+    padding: 0;
     margin: auto;
     text-align: center;
-      /* 🧠 Scroll activé */
-    overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    padding-top: calc(env(safe-area-inset-top, 20px) + 5em); /* safe area + espace visuel */
+    padding-top: calc(env(safe-area-inset-top, 20px) + 5em);
   }
 
   .nav-links li {
@@ -212,72 +209,53 @@ footer {
   .nav-links.nav-active {
     transform: translateX(0);
   }
-  
+
   .nav-active ~ .logo-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  background: white;
-  padding-top: env(safe-area-inset-top, 20px);
-  padding-bottom: 0.5em;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  pointer-events: none; /* 🔒 bloque les interactions fantômes */
-  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background: white;
+    padding-top: env(safe-area-inset-top, 20px);
+    padding-bottom: 0.5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    pointer-events: none;
   }
-   body.nav-open {
+
+  body.nav-open {
     height: 100vh;
     overflow: hidden;
-  }     
-
-/* =========================
-   UTILITAIRES
-   ========================= */
-
-/* Désactive le scroll de fond quand le menu est ouvert */
-body.noscroll {
-  height: 100vh;
-  overflow: hidden;
-}
-  
-* {
-  max-width: 100vw;
-}
+    position: fixed;
+    overscroll-behavior: none;
+    touch-action: none;
+    width: 100vw;
+  }
 
   .freeze-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
-  background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background: white;
+  }
 }
-  
+
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 768px) {
     .nav-links {
-      padding-top: 160px !important; /* ajuste si besoin (150, 180…) */
+      padding-top: 160px !important;
     }
   }
-}
-body.noscroll {
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  overscroll-behavior: none;
-  touch-action: none;
-}
-
-html {
-  overscroll-behavior: none;
-}
-
-@supports (-webkit-touch-callout: none) {
-  body.noscroll {
+  body.nav-open {
     position: fixed;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
   }
+}
+
+html {
+  overscroll-behavior: none;
 }
