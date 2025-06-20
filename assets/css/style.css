@@ -117,107 +117,119 @@ footer {
 /* =========================
    MOBILE (≤ 768 px)
    ========================= */
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-  /* ——— Safe-area padding général ——— */
-  body{
-    padding-left:env(safe-area-inset-left);
-    padding-right:env(safe-area-inset-right);
-    padding-top:env(safe-area-inset-top,20px);
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top, 20px);
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    position: relative;
   }
 
-  /* ---------- Header mobile ---------- */
-  .navbar{
-    flex-direction:column;
-    align-items:center;
-    padding:1em;
-    position:relative;
+  .logo-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .3em;
+    margin-bottom: .5em;
+    position: relative;
+    padding-top: env(safe-area-inset-top, 20px); /* pour Safari, sinon fallback à 20px */
   }
 
-  /* logo + texte : normal = dans le flux, fixe SEULEMENT quand menu ouvert */
-  .logo-container{
-    width:100%;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:.3em;
-    margin-bottom:.5em;
-    position:relative;            /* ← plus “fixed” par défaut */
-  }
-  .logo-img{height:55px;max-width:100%}
-  .logo-text{font-size:1.1em;text-align:center;width:100%}
-
-  /* bouton burger */
-  .burger{
-    display:block;
-    position:absolute;
-    right:20px;
-    top:20px;
-    z-index:10001;
+  .logo-img  {
+    height: 60px;
+    max-width: 100%;
+    z-index: 99999;
   }
 
-  /* ---------- Menu latéral mobile ---------- */
-  .nav-links{
-    position:fixed;
-    inset:0;
-    width:100vw;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    background:#fff;
-    transform:translateX(100%);
-    transition:transform .3s ease-in-out;
-
-    /* scroll interne uniquement */
-    overflow-y:auto;
-    overflow-x:hidden;
-    overscroll-behavior:contain;
-    -webkit-overflow-scrolling:touch;
-
-    /* espace sous le logo (sera réajusté quand logo se fixe) */
-    padding-top:120px;
-    text-align:center;
+  .logo-text {
+    font-size: 1.1em;
+    text-align: center;
+    width: 100%;
   }
 
-  .nav-links li{
-    width:100%;
-    margin:.5em 0;
-    padding:.5em 0;
+  .burger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 99999;
   }
 
-  .nav-links a{
-    display:inline-block;
-    width:100%;
-    font-size:1.2em;
-    font-weight:normal;
-    color:#333;
-    line-height:1.4em;
-    text-align:center;
+  .nav-links {
+    position: fixed;
+    inset: 0;                     /* top:0; right:0; bottom:0; left:0 */
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+    overflow-y: auto;
+    overscroll-behavior: contain; /* bloque scroll body sur iOS */
+    padding: 0; /* on reset les padding suspects */
+    margin: auto;
+    text-align: center;
+      /* 🧠 Scroll activé */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding-top: calc(env(safe-area-inset-top, 20px) + 5em); /* safe area + espace visuel */
   }
 
-  /* ——— menu visible ——— */
-  .nav-links.nav-active{transform:translateX(0)}
-
-  /* ---------- Effet “logo fixe” quand menu ouvert ---------- */
-  .nav-active ~ .logo-container{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#fff;
-    padding:env(safe-area-inset-top,20px) 0 1em;
-    box-shadow:0 2px 5px rgb(0 0 0 / .05);
-    z-index:10000;
-    pointer-events:none;          /* ne capte pas les clics / scroll */
+  .nav-links li {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0.5em 0;
+    padding: 0.5em 0;
   }
 
-  /* ---------- Body verrouillé quand menu ouvert ---------- */
-  body.nav-open{
-    height:100vh;
-    overflow:hidden;
+  .nav-links a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 1.4em;
   }
-}
+
+  .nav-links.nav-active {
+    transform: translateX(0);
+  }
+  
+  .nav-active ~ .logo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: white;
+  padding-top: env(safe-area-inset-top, 20px);
+  padding-bottom: 0.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  pointer-events: none; /* 🔒 bloque les interactions fantômes */
+  
+  }
+   body.nav-open {
+    height: 100vh;
+    overflow: hidden;
+  }     
 
 /* =========================
    UTILITAIRES
