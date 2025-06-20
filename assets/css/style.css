@@ -249,11 +249,14 @@ footer {
     }
   }
   body.nav-open {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+  position: fixed;
+  top: 0;              /* ← ajoute ça ! */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 html {
