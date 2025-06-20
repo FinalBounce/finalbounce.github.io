@@ -223,7 +223,6 @@ footer {
   padding-top: env(safe-area-inset-top, 20px);
   padding-bottom: 0.5em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  pointer-events: none; /* 🔒 bloque les interactions fantômes */
   
   }
    body.nav-open {
