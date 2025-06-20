@@ -1,15 +1,17 @@
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const body = document.body;
-const navbar = document.querySelector('.navbar'); // on cible la navbar
+const navbar = document.querySelector('.navbar');
 
+// 🔒 Active/désactive le menu burger et le blocage du scroll
 burger.addEventListener('click', () => {
-  nav.classList.toggle('nav-active');
-  body.classList.toggle('noscroll');
-  navbar.classList.toggle('freeze-navbar'); // bloque la navbar pendant le menu
+  const isOpen = nav.classList.toggle('nav-active');
+
+  body.classList.toggle('noscroll', isOpen);
+  navbar.classList.toggle('freeze-navbar', isOpen);
 });
 
-// Quand on clique sur un lien du menu, on referme tout propre
+// ✅ Ferme proprement le menu quand on clique sur un lien
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('nav-active');
