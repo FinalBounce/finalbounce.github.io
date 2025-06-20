@@ -244,6 +244,16 @@ body.noscroll {
 * {
   max-width: 100vw;
 }
+
+  .freeze-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: white;
+}
+  
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 768px) {
     .nav-links {
