@@ -201,6 +201,18 @@ footer {
   .nav-links.nav-active {
     transform: translateX(0);
   }
+  
+  .nav-active ~ .logo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: white;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 }
 
 /* =========================
