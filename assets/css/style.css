@@ -223,6 +223,7 @@ footer {
   padding-top: env(safe-area-inset-top, 20px);
   padding-bottom: 0.5em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  pointer-events: none; /* 🔒 bloque les interactions fantômes */
   
   }
    body.nav-open {
@@ -237,9 +238,7 @@ footer {
 /* Désactive le scroll de fond quand le menu est ouvert */
 body.noscroll {
   height: 100vh;
-  overflow: hidden !important;
-  position: fixed;
-  width: 100vw;
+  overflow: hidden;
 }
   
 * {
