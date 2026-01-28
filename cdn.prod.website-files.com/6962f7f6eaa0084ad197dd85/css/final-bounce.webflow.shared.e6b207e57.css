@@ -5448,3 +5448,11 @@ body {
     place-self: auto;
   }
 }
+/* Force hide Webflow badge */
+.w-webflow-badge,
+.w-webflow-badge * {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
