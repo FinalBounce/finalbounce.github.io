@@ -373,7 +373,7 @@ footer[id] {
   right: -7vw;
   width: clamp(17rem, 34vw, 34rem);
   height: auto;
-  opacity: 0.32;
+  opacity: 0.12;
   mix-blend-mode: multiply;
   pointer-events: none;
   user-select: none;
@@ -1437,7 +1437,7 @@ footer[id] {
     top: 17%;
     right: -30%;
     width: 21rem;
-    opacity: 0.18;
+    opacity: 0.09;
   }
 
   .hero__title {
