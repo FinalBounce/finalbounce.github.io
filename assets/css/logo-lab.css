@@ -227,6 +227,7 @@ ul {
   grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
   min-height: 45rem;
   border: 0.14rem solid var(--ink);
+  scroll-margin-top: 6rem;
 }
 
 .concept + .concept {
@@ -332,9 +333,18 @@ ul {
   display: grid;
   flex: 0 0 auto;
   place-items: center;
+  overflow: hidden;
+}
+
+.mini-frame {
   width: 3.15rem;
   height: 3.15rem;
-  overflow: hidden;
+}
+
+.favicon-test {
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 .mini-frame--dark {
@@ -380,8 +390,15 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.13);
   transform-origin: center;
+}
+
+.logo-mark.is-mini {
+  transform: translate(-50%, -50%) scale(0.13);
+}
+
+.logo-mark.is-favicon {
+  transform: translate(-50%, -50%) scale(0.085);
 }
 
 /* 01 — Horseshoe */
@@ -485,56 +502,133 @@ ul {
 /* 03 — Deck */
 .deck__frame {
   position: absolute;
-  inset: 12% 5% 13%;
-  border: 2rem solid currentColor;
-  border-radius: 2rem;
+  inset: 12% 5%;
+  background: currentColor;
+  border-radius: 1.8rem 1.8rem 3.2rem 3.2rem;
 }
 
 .deck__reel {
   position: absolute;
   z-index: 2;
-  top: 25%;
-  width: 29%;
+  top: 21%;
+  width: 30%;
   aspect-ratio: 1;
   background: var(--mark-bg);
-  border: 1.65rem solid currentColor;
   border-radius: 50%;
+  box-shadow: inset 0 0 0 1rem currentColor;
 }
 
-.deck__reel::after {
+.deck__spoke,
+.deck__hub {
   position: absolute;
-  inset: 34%;
-  content: "";
   background: currentColor;
+}
+
+.deck__spoke {
+  z-index: 2;
+  top: calc(50% - 0.45rem);
+  left: 50%;
+  width: 34%;
+  height: 0.9rem;
+  border-radius: 999px;
+  transform-origin: left center;
+}
+
+.deck__spoke--two {
+  transform: rotate(120deg);
+}
+
+.deck__spoke--three {
+  transform: rotate(240deg);
+}
+
+.deck__hub {
+  z-index: 3;
+  inset: 39%;
   border-radius: 50%;
 }
 
 .deck__reel--left {
-  left: 15%;
+  left: 17%;
 }
 
 .deck__reel--right {
-  right: 15%;
+  right: 17%;
 }
 
-.deck__line {
+.deck__tape {
   position: absolute;
-  z-index: 3;
-  top: 54%;
-  left: 29%;
-  width: 42%;
-  height: 1.3rem;
-  background: currentColor;
+  z-index: 5;
+  top: 49.5%;
+  width: 20%;
+  height: 1rem;
+  background: var(--mark-bg);
+  border-radius: 999px;
 }
 
-.deck__slot {
+.deck__tape--left {
+  left: 31%;
+  transform: rotate(18deg);
+  transform-origin: left center;
+}
+
+.deck__tape--right {
+  right: 31%;
+  transform: rotate(-18deg);
+  transform-origin: right center;
+}
+
+.deck__head {
   position: absolute;
-  z-index: 3;
-  right: 27%;
-  bottom: 23%;
-  left: 27%;
-  height: 1.45rem;
+  z-index: 4;
+  top: 54.5%;
+  left: 44.5%;
+  width: 11%;
+  height: 13%;
+  background: var(--mark-bg);
+  border-radius: 0.45rem;
+  clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%);
+}
+
+.deck__meter {
+  position: absolute;
+  z-index: 4;
+  bottom: 19%;
+  left: 18%;
+  width: 24%;
+  height: 8%;
+  background: var(--mark-bg);
+  border-radius: 0.45rem;
+}
+
+.deck__meter::after {
+  position: absolute;
+  bottom: 28%;
+  left: 24%;
+  width: 52%;
+  height: 0.42rem;
+  content: "";
   background: currentColor;
+  border-radius: 999px;
+  transform: rotate(-12deg);
+}
+
+.deck__rec {
+  position: absolute;
+  z-index: 4;
+  right: 19%;
+  bottom: 20%;
+  width: 5%;
+  aspect-ratio: 1;
+  background: var(--signal);
+  border-radius: 50%;
+}
+
+.logo-mark.is-mini .deck__meter,
+.logo-mark.is-mini .deck__rec,
+.logo-mark.is-favicon .deck__meter,
+.logo-mark.is-favicon .deck__rec {
+  display: none;
 }
 
 /* 04 — FB monogram */
