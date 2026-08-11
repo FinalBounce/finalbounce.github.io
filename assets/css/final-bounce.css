@@ -110,6 +110,218 @@ label[data-hero="toggle"]:focus-within {
   border-radius: 999px;
 }
 
+/* Signature hero: the existing switch becomes a reel-to-reel recorder. */
+.body-3 .comp.toggle-w {
+  width: clamp(18rem, 26.7vw, 24rem);
+  height: clamp(10rem, 14.8vw, 13.33rem);
+}
+
+.body-3 [data-css="toggle"] {
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+}
+
+.body-3 [data-css="toggle"] .toggle-slider {
+  overflow: hidden;
+  background: #8e5572;
+  box-shadow:
+    inset 0.2rem 0.2rem 0 rgb(241 240 204 / 18%),
+    inset -0.3rem -0.45rem 0 rgb(39 15 3 / 14%),
+    0 0.85rem 0 rgb(39 15 3 / 16%);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.body-3 [data-css="toggle"] .toggle-ball,
+.body-3 [data-css="toggle"]:has(input:checked) .toggle-ball {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  background: none;
+  border: 0;
+  border-radius: inherit;
+  box-shadow: none;
+  transform: none !important;
+}
+
+.body-3 [data-css="toggle"] .toggle-ball::before,
+.body-3 [data-css="toggle"] .toggle-ball::after {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 34.2%;
+  height: auto;
+  aspect-ratio: 1;
+  content: "";
+  background:
+    radial-gradient(
+      circle,
+      var(--fb-paper) 0 0.35rem,
+      var(--fb-ink) 0.4rem 0.72rem,
+      transparent 0.77rem
+    ),
+    repeating-conic-gradient(
+      from -10deg,
+      var(--fb-paper) 0deg 16deg,
+      var(--fb-ink) 16deg 55deg
+    );
+  border: 0.28rem solid var(--fb-ink);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 0.22rem var(--fb-paper),
+    0 0.45rem 0 rgb(39 15 3 / 22%);
+  animation-duration: 1.35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+.body-3 [data-css="toggle"] .toggle-ball::before {
+  left: 5.6%;
+  animation-name: fb-reel-clockwise;
+}
+
+.body-3 [data-css="toggle"] .toggle-ball::after {
+  right: 5.6%;
+  animation-name: fb-reel-counterclockwise;
+  animation-duration: 1.55s;
+}
+
+.body-3 [data-css="toggle"] .toggle-slider::before {
+  position: absolute;
+  z-index: 1;
+  top: 48%;
+  right: 22.8%;
+  left: 22.8%;
+  height: 32%;
+  content: "";
+  background: var(--fb-ink);
+  clip-path: polygon(0 0, 50% 76%, 100% 0, 100% 10%, 50% 88%, 0 10%);
+  opacity: 0.96;
+}
+
+.body-3 [data-css="toggle"] .toggle-slider::after {
+  position: absolute;
+  z-index: 3;
+  bottom: 0.55rem;
+  left: 50%;
+  min-width: 2.8rem;
+  padding: 0.2rem 0.45rem;
+  content: "REC";
+  color: var(--fb-paper);
+  background: var(--fb-ink);
+  border: 0.12rem solid var(--fb-paper);
+  border-radius: 999px;
+  font-family: Arial, sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-align: center;
+  transform: translateX(-50%);
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.body-3 [data-css="toggle"]:has(input:checked) .toggle-slider {
+  background: #995f7d;
+  box-shadow:
+    inset 0.2rem 0.2rem 0 rgb(241 240 204 / 24%),
+    inset -0.3rem -0.45rem 0 rgb(39 15 3 / 18%),
+    0 1rem 0 rgb(39 15 3 / 19%),
+    0 0 2.8rem rgb(142 85 114 / 36%);
+}
+
+.body-3 [data-css="toggle"]:has(input:checked) .toggle-ball::before,
+.body-3 [data-css="toggle"]:has(input:checked) .toggle-ball::after {
+  animation-play-state: running;
+}
+
+.body-3 [data-css="toggle"]:has(input:checked) .toggle-slider::after {
+  color: var(--fb-ink);
+  background: #d5671d;
+}
+
+/* Reuse the original GSAP entrances, but turn every word strip into tape. */
+.body-3 .hero-alt .hero-stripe-text,
+.body-3 .hero-alt .hero-inner-img {
+  display: none !important;
+}
+
+.body-3 .hero-alt .hero-stripe-w {
+  width: 100vw;
+  height: clamp(4.5rem, 10vh, 7rem);
+  color: transparent;
+  font-size: 0;
+}
+
+.body-3 .hero-alt .hero-stripe {
+  position: relative;
+  width: max(96rem, 180vw);
+  height: clamp(0.62rem, 1.2vw, 1.05rem);
+  min-height: 0.62rem;
+  padding: 0;
+  overflow: hidden;
+  background: var(--fb-ink);
+  border: 0.08rem solid rgb(241 240 204 / 55%);
+  border-radius: 999px;
+  box-shadow: 0 0.5rem 0 rgb(39 15 3 / 15%);
+}
+
+.body-3 .hero-alt .hero-stripe::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 34%,
+    rgb(241 240 204 / 28%) 48%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 12rem 100%;
+  animation: fb-tape-travel 0.7s linear infinite paused;
+}
+
+.body-3 .hero-alt .hero-stripe-w:nth-child(even) .hero-stripe {
+  height: clamp(0.42rem, 0.8vw, 0.72rem);
+  min-height: 0.42rem;
+  opacity: 0.84;
+}
+
+.body-3 .hero:has(.toggle-html-input:checked) .hero-alt .hero-stripe::before {
+  animation-play-state: running;
+}
+
+.body-3 .hero:has(.toggle-html-input:checked) [data-hero="title"],
+.body-3 .hero:has(.toggle-html-input:checked) [data-hero="par"],
+.body-3 .hero:has(.toggle-html-input:checked) .fb-hero-actions {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+@keyframes fb-reel-clockwise {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes fb-reel-counterclockwise {
+  to {
+    transform: translateY(-50%) rotate(-360deg);
+  }
+}
+
+@keyframes fb-tape-travel {
+  to {
+    background-position: 12rem 0;
+  }
+}
+
 .btn-link-1:hover,
 .btn-link-2:hover {
   color: var(--fb-paper) !important;
@@ -345,6 +557,10 @@ label[data-hero="toggle"]:focus-within {
     min-height: 2.5rem;
     padding-inline: 0.45rem;
     font-size: 0.75rem;
+  }
+
+  .body-3 .hero-alt .hero-stripe-w {
+    height: clamp(3.75rem, 8.8vh, 5.5rem);
   }
 
   .enregistrement.hero > .comp.toggle-w,

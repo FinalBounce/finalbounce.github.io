@@ -139,6 +139,35 @@
     });
   };
 
+  const setupTapeHero = () => {
+    const hero = document.querySelector(".body-3 [data-module='hero']");
+    const toggle = hero?.querySelector("[data-hero='toggle'] input");
+    const layer = hero?.querySelector("[data-hero='layer']");
+
+    if (!hero || !toggle || !layer) {
+      return;
+    }
+
+    toggle.setAttribute("aria-label", "Afficher la scène magnétophone animée");
+    layer.setAttribute("aria-hidden", "true");
+
+    const legacyVideos = [...layer.querySelectorAll("video")];
+
+    legacyVideos.forEach((video) => {
+      video.pause();
+      video.remove();
+    });
+
+    const syncTapeState = () => {
+      hero.classList.toggle("fb-tape-playing", toggle.checked);
+    };
+
+    toggle.addEventListener("change", syncTapeState);
+    syncTapeState();
+  };
+
+  setupTapeHero();
+
   document.addEventListener("DOMContentLoaded", () => {
     updateMotionPreference();
     labelSliders();
