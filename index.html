@@ -6,6 +6,8 @@
     <title>Studio musical et visuel à Sainte Eulalie — Final Bounce</title>
     <meta name="description" content="Final Bounce accompagne les artistes à Sainte Eulalie : enregistrement, mixage, production et création visuelle, de l’idée à la réalisation.">
     <meta name="theme-color" content="#101010">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
     <link rel="canonical" href="https://finalbounce.studio/">
 
     <meta property="og:title" content="Studio musical et visuel à Sainte Eulalie — Final Bounce">
@@ -35,6 +37,7 @@
           "@type": "Organization",
           "@id": "https://finalbounce.studio/#organization",
           "name": "Final Bounce",
+          "logo": "https://finalbounce.studio/assets/brand/final-bounce-logo.png",
           "description": "Final Bounce, c'est un studio associatif centré sur l'accompagnement des artistes, de l'idée jusqu'à la réalisation de leurs projets musicaux et visuels.",
           "url": "https://finalbounce.studio/",
           "email": "mailto:contact@finalbounce.studio",
@@ -68,7 +71,7 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="index.html" aria-label="Final Bounce — Accueil">
-          <span class="brand__mark" aria-hidden="true">FB</span>
+          <span class="brand__logo-shell" aria-hidden="true"><img class="brand__logo" src="assets/brand/final-bounce-logo.png" alt=""></span>
           <span class="brand__name">final bounce</span>
         </a>
         <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
@@ -85,6 +88,7 @@
 
     <main id="main-content">
       <section class="hero" aria-labelledby="home-title">
+        <img class="hero__logo-watermark" src="assets/brand/final-bounce-logo.png" alt="" aria-hidden="true">
         <div class="hero__inner">
           <p class="eyebrow hero__eyebrow" data-reveal>Studio associatif · Sainte Eulalie</p>
           <h1 class="hero__title" id="home-title" aria-label="Final Bounce" data-reveal>
@@ -260,7 +264,10 @@
       <div class="container">
         <div class="site-footer__top">
           <div class="site-footer__statement">
-            <h2>Final Bounce</h2>
+            <div class="site-footer__identity">
+              <img class="site-footer__logo" src="assets/brand/final-bounce-logo.png" alt="">
+              <h2>Final Bounce</h2>
+            </div>
             <p>Final Bounce est un studio associatif dédié à l’accompagnement des artistes, de l’idée à la réalisation.</p>
             <p>Nous réunissons écoute, savoir-faire technique et direction artistique pour construire des projets musicaux et visuels cohérents.</p>
             <p>Enregistrement, mixage, pré-mastering, production, formation et accompagnement visuel.</p>

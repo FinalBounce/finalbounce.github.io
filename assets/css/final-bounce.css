@@ -259,18 +259,21 @@ footer[id] {
   text-transform: lowercase;
 }
 
-.brand__mark {
+.brand__logo-shell {
   display: inline-grid;
+  flex: 0 0 auto;
   place-items: center;
-  width: 2.35rem;
-  height: 2.35rem;
-  color: var(--ink);
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.18rem;
   background: var(--acid);
   border-radius: 50%;
-  font-family: var(--font-wild);
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+}
+
+.brand__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand__name {
@@ -364,19 +367,16 @@ footer[id] {
   background-size: clamp(2.5rem, 6vw, 6rem) clamp(2.5rem, 6vw, 6rem);
 }
 
-.hero::before {
+.hero__logo-watermark {
   position: absolute;
-  top: 17%;
-  right: -8vw;
-  width: clamp(15rem, 31vw, 31rem);
-  aspect-ratio: 1;
-  content: "";
-  background:
-    radial-gradient(circle, var(--signal) 0 12%, var(--ink) 12.5% 15%, transparent 15.5%),
-    repeating-radial-gradient(circle, transparent 0 8%, rgb(16 16 16 / 18%) 8.4% 9.1%);
-  border: clamp(0.8rem, 1.5vw, 1.35rem) solid var(--ink);
-  border-radius: 50%;
-  opacity: 0.68;
+  top: 15%;
+  right: -7vw;
+  width: clamp(17rem, 34vw, 34rem);
+  height: auto;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
   transform: rotate(-11deg);
 }
 
@@ -1045,6 +1045,26 @@ footer[id] {
   font-weight: 550;
 }
 
+.site-footer__identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.site-footer__identity h2 {
+  margin-bottom: 0;
+}
+
+.site-footer__logo {
+  flex: 0 0 auto;
+  width: clamp(3.8rem, 5vw, 5.2rem);
+  height: auto;
+  padding: 0.2rem;
+  background: var(--acid);
+  border-radius: 50%;
+}
+
 .site-footer h2,
 .site-footer h3 {
   margin-bottom: 1.1rem;
@@ -1413,11 +1433,11 @@ footer[id] {
     padding-top: calc(var(--header-height) + 4rem);
   }
 
-  .hero::before {
+  .hero__logo-watermark {
     top: 17%;
     right: -30%;
     width: 21rem;
-    opacity: 0.42;
+    opacity: 0.18;
   }
 
   .hero__title {
@@ -1522,9 +1542,9 @@ footer[id] {
     gap: 0.75rem;
   }
 
-  .brand__mark {
-    width: 2.1rem;
-    height: 2.1rem;
+  .brand__logo-shell {
+    width: 2.45rem;
+    height: 2.45rem;
   }
 
   .hero {

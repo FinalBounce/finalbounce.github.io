@@ -27,6 +27,8 @@
       content="À Sainte Eulalie, un mixage clair, vivant et cohérent, construit autour de votre intention artistique."
     >
     <meta name="theme-color" content="#9877ff">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
 
     <link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="assets/fonts/Syne-Variable.ttf" as="font" type="font/ttf" crossorigin>
@@ -68,6 +70,7 @@
               "@type": "Organization",
               "@id": "https://finalbounce.studio/#organization",
               "name": "Final Bounce",
+              "logo": "https://finalbounce.studio/assets/brand/final-bounce-logo.png",
               "url": "https://finalbounce.studio/",
               "email": "contact@finalbounce.studio",
               "sameAs": "https://www.instagram.com/final_bounce/",
@@ -91,7 +94,7 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="index.html" aria-label="Final Bounce — Accueil">
-          <span class="brand__mark" aria-hidden="true">FB</span>
+          <span class="brand__logo-shell" aria-hidden="true"><img class="brand__logo" src="assets/brand/final-bounce-logo.png" alt=""></span>
           <span class="brand__name">final bounce</span>
         </a>
 
@@ -280,7 +283,10 @@
       <div class="container">
         <div class="site-footer__top">
           <div class="site-footer__statement">
-            <h2>Final Bounce</h2>
+            <div class="site-footer__identity">
+              <img class="site-footer__logo" src="assets/brand/final-bounce-logo.png" alt="">
+              <h2>Final Bounce</h2>
+            </div>
             <p>Final Bounce est un studio associatif dédié à l’accompagnement des artistes, de l’idée à la réalisation.</p>
             <p>Nous réunissons écoute, savoir-faire technique et direction artistique pour construire des projets musicaux et visuels cohérents.</p>
             <p>Enregistrement, mixage, pré-mastering, production, formation et accompagnement visuel.</p>

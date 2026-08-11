@@ -13,6 +13,7 @@ Ce dépôt GitHub est la source de référence du site. Les futurs exports Webfl
 - `mixage.html` : service de mixage
 - `assets/css/final-bounce.css` : système graphique et responsive partagé
 - `assets/js/final-bounce.js` : menu mobile, révélations progressives et année du pied de page
+- `assets/brand/` : logo optimisé, favicon et icône pour écran d’accueil
 - `assets/fonts/` : polices variables auto-hébergées et leurs licences OFL
 
 Les pages publiques sont en HTML, CSS et JavaScript natifs. Elles ne dépendent plus de Webflow, jQuery, GSAP ou Lenis. Les anciens dossiers d’export sont conservés temporairement comme archive locale, mais ne sont plus chargés par le site.
