@@ -1,0 +1,712 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/BricolageGrotesque-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+:root {
+  --ink: #101010;
+  --paper: #f3efe4;
+  --paper-bright: #fffdf6;
+  --signal: #ff5a36;
+  --acid: #d8ff43;
+  --violet: #9877ff;
+  --pink: #ff9fc7;
+  --gutter: clamp(1rem, 3.5vw, 4rem);
+  --font-main: "Bricolage Grotesque", Arial, sans-serif;
+  --font-wild: "Syne", "Arial Black", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-main);
+  font-variation-settings: "opsz" 24, "wdth" 92;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--acid);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+.lab-header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: 5.25rem;
+  padding-inline: var(--gutter);
+  color: var(--paper-bright);
+  background: var(--ink);
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lab-header > :last-child {
+  justify-self: end;
+}
+
+.lab-brand {
+  justify-self: start;
+  color: var(--acid);
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+.lab-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  gap: clamp(2rem, 8vw, 10rem);
+  align-items: end;
+  min-height: calc(100svh - 5.25rem);
+  padding: clamp(4rem, 9vw, 9rem) var(--gutter);
+  overflow: hidden;
+  background-color: var(--signal);
+  background-image:
+    linear-gradient(rgb(16 16 16 / 9%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(16 16 16 / 9%) 1px, transparent 1px);
+  background-size: clamp(2.5rem, 6vw, 6rem) clamp(2.5rem, 6vw, 6rem);
+}
+
+.lab-hero__title {
+  align-self: end;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 0.65rem;
+  height: 0.65rem;
+  content: "";
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.lab-hero h1 {
+  margin: 0;
+  font-size: clamp(4.2rem, 10.5vw, 11rem);
+  font-weight: 800;
+  letter-spacing: -0.085em;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.lab-hero h1 em {
+  font-family: var(--font-wild);
+  font-style: normal;
+  font-size: 0.72em;
+  letter-spacing: -0.08em;
+}
+
+.lab-hero__copy {
+  max-width: 36rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 600;
+}
+
+.lab-note {
+  margin: 2rem 0 0;
+  padding-top: 1rem;
+  border-top: 0.12rem solid var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.starting-point {
+  display: grid;
+  grid-template-columns: 1fr minmax(12rem, 0.5fr) 0.7fr;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: center;
+  padding: clamp(5rem, 10vw, 10rem) var(--gutter);
+  color: var(--paper-bright);
+  background: var(--ink);
+}
+
+.starting-point h2,
+.concepts__heading h2,
+.decision h2 {
+  margin-bottom: 0;
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-weight: 760;
+  letter-spacing: -0.075em;
+  line-height: 0.86;
+}
+
+.starting-point img {
+  width: min(100%, 20rem);
+  padding: 0.8rem;
+  background: var(--paper);
+  border-radius: 50%;
+  filter: grayscale(0.25);
+}
+
+.starting-point ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgb(255 255 255 / 26%);
+}
+
+.starting-point li {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 26%);
+}
+
+.concepts {
+  padding: clamp(5rem, 10vw, 10rem) var(--gutter);
+  background: var(--paper-bright);
+}
+
+.concepts__heading {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: start;
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.concept {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+  min-height: 45rem;
+  border: 0.14rem solid var(--ink);
+}
+
+.concept + .concept {
+  margin-top: clamp(2rem, 5vw, 5rem);
+}
+
+.concept__visual {
+  display: grid;
+  place-items: center;
+  min-height: 45rem;
+  overflow: hidden;
+  border-right: 0.14rem solid var(--ink);
+}
+
+.concept__visual--acid {
+  --mark-bg: var(--acid);
+  color: var(--ink);
+  background: var(--acid);
+}
+
+.concept__visual--signal {
+  --mark-bg: var(--signal);
+  color: var(--ink);
+  background: var(--signal);
+}
+
+.concept__visual--violet {
+  --mark-bg: var(--violet);
+  color: var(--ink);
+  background: var(--violet);
+}
+
+.concept__visual--dark {
+  --mark-bg: var(--ink);
+  color: var(--acid);
+  background: var(--ink);
+}
+
+.concept__body {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+
+.concept__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.concept h3 {
+  margin: auto 0 1.5rem;
+  font-size: clamp(3.2rem, 6vw, 6.6rem);
+  font-weight: 780;
+  letter-spacing: -0.08em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.concept__body > p {
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+}
+
+.concept__verdict {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid var(--ink);
+  font-weight: 700;
+}
+
+.use-cases {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+.header-test {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 4.5rem;
+  padding: 0.65rem 0.8rem;
+  color: var(--paper-bright);
+  background: var(--ink);
+}
+
+.header-test strong {
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
+}
+
+.mini-frame,
+.favicon-test {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 3.15rem;
+  height: 3.15rem;
+  overflow: hidden;
+}
+
+.mini-frame--dark {
+  --mark-bg: var(--ink);
+  color: var(--acid);
+  background: var(--ink);
+}
+
+.favicon-test--acid {
+  --mark-bg: var(--acid);
+  color: var(--ink);
+  background: var(--acid);
+}
+
+.favicon-test--signal {
+  --mark-bg: var(--signal);
+  color: var(--ink);
+  background: var(--signal);
+}
+
+.favicon-test--violet {
+  --mark-bg: var(--violet);
+  color: var(--ink);
+  background: var(--violet);
+}
+
+.favicon-test--dark {
+  --mark-bg: var(--ink);
+  color: var(--acid);
+  background: var(--ink);
+}
+
+/* Shared concept geometry — fixed drawing plane for faithful small-size tests. */
+.logo-mark {
+  position: relative;
+  width: 22rem;
+  height: 22rem;
+  color: inherit;
+}
+
+.logo-mark.is-mini,
+.logo-mark.is-favicon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.13);
+  transform-origin: center;
+}
+
+/* 01 — Horseshoe */
+.horseshoe__arc {
+  position: absolute;
+  inset: 10% 9% 7%;
+  border: 2.55rem solid currentColor;
+  border-top: 0;
+  border-radius: 0 0 50% 50%;
+}
+
+.logo-mark .reel {
+  position: absolute;
+  z-index: 2;
+  top: 19%;
+  width: 31%;
+  aspect-ratio: 1;
+  background: var(--mark-bg);
+  border: 1.85rem solid currentColor;
+  border-radius: 50%;
+}
+
+.logo-mark .reel::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26%;
+  aspect-ratio: 1;
+  content: "";
+  background: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-mark .reel--left {
+  left: 14%;
+}
+
+.logo-mark .reel--right {
+  right: 14%;
+}
+
+.horseshoe__bridge {
+  position: absolute;
+  z-index: 1;
+  top: 34%;
+  left: 32%;
+  width: 36%;
+  height: 9%;
+  background: currentColor;
+}
+
+/* 02 — Loop */
+.loop__reel {
+  position: absolute;
+  z-index: 3;
+  top: 19%;
+  width: 34%;
+  aspect-ratio: 1;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.loop__reel::after {
+  position: absolute;
+  inset: 30%;
+  content: "";
+  background: var(--mark-bg);
+  border-radius: 50%;
+}
+
+.loop__reel--left {
+  left: 12%;
+}
+
+.loop__reel--right {
+  right: 12%;
+}
+
+.loop__tape {
+  position: absolute;
+  inset: 28% 11% 9%;
+  border-right: 2.2rem solid currentColor;
+  border-bottom: 2.2rem solid currentColor;
+  border-left: 2.2rem solid currentColor;
+  border-radius: 0 0 50% 50%;
+}
+
+.loop__cut {
+  position: absolute;
+  z-index: 4;
+  right: 4%;
+  bottom: 16%;
+  width: 28%;
+  height: 2.2rem;
+  background: currentColor;
+  transform: rotate(-28deg);
+  transform-origin: right center;
+}
+
+/* 03 — Deck */
+.deck__frame {
+  position: absolute;
+  inset: 12% 5% 13%;
+  border: 2rem solid currentColor;
+  border-radius: 2rem;
+}
+
+.deck__reel {
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  width: 29%;
+  aspect-ratio: 1;
+  background: var(--mark-bg);
+  border: 1.65rem solid currentColor;
+  border-radius: 50%;
+}
+
+.deck__reel::after {
+  position: absolute;
+  inset: 34%;
+  content: "";
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.deck__reel--left {
+  left: 15%;
+}
+
+.deck__reel--right {
+  right: 15%;
+}
+
+.deck__line {
+  position: absolute;
+  z-index: 3;
+  top: 54%;
+  left: 29%;
+  width: 42%;
+  height: 1.3rem;
+  background: currentColor;
+}
+
+.deck__slot {
+  position: absolute;
+  z-index: 3;
+  right: 27%;
+  bottom: 23%;
+  left: 27%;
+  height: 1.45rem;
+  background: currentColor;
+}
+
+/* 04 — FB monogram */
+.monogram__f-stem,
+.monogram__f-top,
+.monogram__f-mid,
+.monogram__b-stem,
+.monogram__reel {
+  position: absolute;
+  background: currentColor;
+}
+
+.monogram__f-stem {
+  top: 16%;
+  left: 8%;
+  width: 15%;
+  height: 68%;
+}
+
+.monogram__f-top {
+  top: 16%;
+  left: 8%;
+  width: 38%;
+  height: 15%;
+}
+
+.monogram__f-mid {
+  top: 43%;
+  left: 8%;
+  width: 31%;
+  height: 14%;
+}
+
+.monogram__b-stem {
+  z-index: 3;
+  top: 14%;
+  left: 48%;
+  width: 14%;
+  height: 72%;
+}
+
+.monogram__reel {
+  right: 8%;
+  width: 40%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.monogram__reel::after {
+  position: absolute;
+  inset: 29%;
+  content: "";
+  background: var(--mark-bg);
+  border-radius: 50%;
+}
+
+.monogram__reel--top {
+  top: 11%;
+}
+
+.monogram__reel--bottom {
+  bottom: 11%;
+}
+
+.decision {
+  padding: clamp(5rem, 10vw, 10rem) var(--gutter);
+  color: var(--ink);
+  background: var(--acid);
+}
+
+.decision h2 {
+  max-width: 13ch;
+  margin-bottom: 2rem;
+}
+
+.decision > p:not(.eyebrow) {
+  max-width: 48ch;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+}
+
+.decision a {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  color: var(--paper-bright);
+  background: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .lab-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .lab-header > span {
+    display: none;
+  }
+
+  .lab-hero,
+  .starting-point,
+  .concepts__heading,
+  .concept {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-hero {
+    min-height: 50rem;
+    align-content: end;
+  }
+
+  .starting-point img {
+    width: min(55vw, 18rem);
+  }
+
+  .concept__visual {
+    min-height: 33rem;
+    border-right: 0;
+    border-bottom: 0.14rem solid var(--ink);
+  }
+
+  .concept__body {
+    min-height: 38rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .lab-header {
+    min-height: 4.5rem;
+    font-size: 0.68rem;
+  }
+
+  .lab-header > :last-child {
+    display: none;
+  }
+
+  .lab-hero {
+    min-height: 44rem;
+  }
+
+  .lab-hero h1 {
+    font-size: clamp(3.7rem, 18vw, 5.5rem);
+  }
+
+  .starting-point img {
+    width: 70vw;
+  }
+
+  .concept {
+    min-height: 0;
+  }
+
+  .concept__visual {
+    min-height: 25rem;
+  }
+
+  .concept__visual > .logo-mark {
+    transform: scale(0.72);
+  }
+
+  .concept__body {
+    min-height: 34rem;
+  }
+
+  .concept h3 {
+    font-size: clamp(2.8rem, 14vw, 4.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
