@@ -266,6 +266,12 @@ ul {
   background: var(--ink);
 }
 
+.concept__visual--paper {
+  --mark-bg: var(--paper-bright);
+  color: var(--ink);
+  background: var(--paper-bright);
+}
+
 .concept__body {
   display: flex;
   flex-direction: column;
@@ -351,6 +357,12 @@ ul {
   --mark-bg: var(--ink);
   color: var(--acid);
   background: var(--ink);
+}
+
+.mini-frame--acid {
+  --mark-bg: var(--acid);
+  color: var(--ink);
+  background: var(--acid);
 }
 
 .favicon-test--acid {
@@ -691,6 +703,195 @@ ul {
 
 .monogram__reel--bottom {
   bottom: 11%;
+}
+
+/* 05 — Smoothed heritage seal */
+.heritage__disc {
+  position: absolute;
+  inset: 3%;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.heritage__rail {
+  position: absolute;
+  z-index: 2;
+  top: 23%;
+  width: 15%;
+  height: 51%;
+  border: 1.15rem solid var(--mark-bg);
+}
+
+.heritage__rail--left {
+  left: 8%;
+  border-right: 0;
+  border-radius: 50% 0 0 50%;
+}
+
+.heritage__rail--right {
+  right: 8%;
+  border-left: 0;
+  border-radius: 0 50% 50% 0;
+}
+
+.heritage__word {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  margin: 0;
+  color: var(--mark-bg);
+  font-family: var(--font-main);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.heritage__word i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-style: normal;
+  line-height: 1;
+  transform-origin: center;
+}
+
+.heritage__word--top i {
+  font-size: 4rem;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(-8.45rem);
+}
+
+.heritage__word--bottom i {
+  font-size: 3.2rem;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateY(8.45rem);
+}
+
+.heritage__reel {
+  position: absolute;
+  z-index: 3;
+  top: 31%;
+  width: 29%;
+  aspect-ratio: 1;
+  background: var(--mark-bg);
+  border-radius: 50%;
+}
+
+.heritage__reel--left {
+  left: 18.5%;
+}
+
+.heritage__reel--right {
+  right: 18.5%;
+}
+
+.heritage__spoke,
+.heritage__hub {
+  position: absolute;
+  background: currentColor;
+}
+
+.heritage__spoke {
+  z-index: 2;
+  top: calc(50% - 0.48rem);
+  left: 50%;
+  width: 35%;
+  height: 0.96rem;
+  border-radius: 999px;
+  transform-origin: left center;
+}
+
+.heritage__spoke--two {
+  transform: rotate(120deg);
+}
+
+.heritage__spoke--three {
+  transform: rotate(240deg);
+}
+
+.heritage__hub {
+  z-index: 3;
+  inset: 38%;
+  border-radius: 50%;
+}
+
+.heritage__tape {
+  position: absolute;
+  z-index: 4;
+  top: 57.5%;
+  width: 19%;
+  height: 0.95rem;
+  background: var(--mark-bg);
+  border-radius: 999px;
+}
+
+.heritage__tape--left {
+  left: 31.5%;
+  transform: rotate(18deg);
+  transform-origin: left center;
+}
+
+.heritage__tape--right {
+  right: 31.5%;
+  transform: rotate(-18deg);
+  transform-origin: right center;
+}
+
+.heritage__panel {
+  position: absolute;
+  z-index: 4;
+  top: 63%;
+  left: 35%;
+  width: 30%;
+  height: 10%;
+  background: var(--mark-bg);
+  border-radius: 0.55rem;
+  clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);
+}
+
+.heritage__panel::after {
+  position: absolute;
+  top: 34%;
+  right: 22%;
+  bottom: 34%;
+  left: 22%;
+  content: "";
+  background: currentColor;
+  border-radius: 999px;
+}
+
+.logo-mark.is-mini .heritage__word,
+.logo-mark.is-favicon .heritage__word {
+  display: none;
+}
+
+.logo-mark.is-mini .heritage__reel,
+.logo-mark.is-favicon .heritage__reel {
+  top: 25%;
+  width: 31%;
+}
+
+.logo-mark.is-mini .heritage__reel--left,
+.logo-mark.is-favicon .heritage__reel--left {
+  left: 15%;
+}
+
+.logo-mark.is-mini .heritage__reel--right,
+.logo-mark.is-favicon .heritage__reel--right {
+  right: 15%;
+}
+
+.logo-mark.is-mini .heritage__rail,
+.logo-mark.is-favicon .heritage__rail {
+  top: 14%;
+  height: 70%;
+}
+
+.logo-mark.is-mini .heritage__tape,
+.logo-mark.is-favicon .heritage__tape {
+  top: 53%;
+}
+
+.logo-mark.is-mini .heritage__panel,
+.logo-mark.is-favicon .heritage__panel {
+  display: none;
 }
 
 .decision {
