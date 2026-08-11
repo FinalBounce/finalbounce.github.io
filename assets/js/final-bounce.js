@@ -67,4 +67,48 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach((year) => {
     year.textContent = new Date().getFullYear();
   });
+
+  const contactForm = document.querySelector("[data-contact-form]");
+
+  if (contactForm) {
+    const contactStatus = contactForm.querySelector("[data-contact-status]");
+    const mailtoFallback = contactForm.querySelector("[data-mailto-fallback]");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) return;
+
+      const formData = new FormData(contactForm);
+      const oneLine = (value) => String(value || "").replace(/[\r\n]+/g, " ").trim();
+      const name = oneLine(formData.get("name"));
+      const email = oneLine(formData.get("email"));
+      const project = oneLine(formData.get("project"));
+      const message = String(formData.get("message") || "").trim();
+      const subject = `Projet Final Bounce — ${project}`;
+      const body = [
+        "Bonjour Final Bounce,",
+        "",
+        `Nom / artiste : ${name}`,
+        `E-mail : ${email}`,
+        `Projet : ${project}`,
+        "",
+        "Mon projet :",
+        message,
+        "",
+        "À bientôt,",
+      ].join("\r\n");
+      const mailto = `mailto:contact@finalbounce.studio?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      if (mailtoFallback) {
+        mailtoFallback.href = mailto;
+      }
+
+      if (contactStatus) {
+        contactStatus.hidden = false;
+      }
+
+      window.location.href = mailto;
+    });
+  }
 });

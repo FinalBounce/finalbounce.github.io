@@ -22,8 +22,8 @@
 
     <link rel="preload" href="assets/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="assets/fonts/Syne-Variable.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="assets/css/final-bounce.css?v=3">
-    <script src="assets/js/final-bounce.js" defer></script>
+    <link rel="stylesheet" href="assets/css/final-bounce.css?v=4">
+    <script src="assets/js/final-bounce.js?v=2" defer></script>
 
     <script type="application/ld+json">
       {
@@ -247,16 +247,50 @@
 
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div class="container contact__grid">
-          <div data-reveal>
+          <div class="contact__copy" data-reveal>
             <p class="eyebrow">04 · Contact</p>
             <h2 id="contact-title">Parlons de votre projet.</h2>
             <p class="contact__intro">Enregistrement, mixage, production ou accompagnement visuel : présentez-nous votre projet et vos envies.</p>
+            <div class="contact__details">
+              <a class="contact__email" href="mailto:contact@finalbounce.studio">contact@finalbounce.studio</a>
+              <address>24 rue Roger Blouin<br>33560 Sainte Eulalie<br>France</address>
+              <a class="contact__social" href="https://www.instagram.com/final_bounce/" target="_blank" rel="noopener noreferrer">@final_bounce <span class="sr-only">sur Instagram (nouvelle fenêtre)</span><span class="diagonal-arrow" aria-hidden="true">↗</span></a>
+            </div>
           </div>
-          <div class="contact__details" data-reveal>
-            <a class="contact__email" href="mailto:contact@finalbounce.studio">contact@finalbounce.studio</a>
-            <address>24 rue Roger Blouin<br>33560 Sainte Eulalie<br>France</address>
-            <a class="contact__social" href="https://www.instagram.com/final_bounce/" target="_blank" rel="noopener noreferrer">@final_bounce <span class="sr-only">sur Instagram (nouvelle fenêtre)</span><span class="diagonal-arrow" aria-hidden="true">↗</span></a>
-          </div>
+          <form
+            class="contact-form"
+            action="mailto:contact@finalbounce.studio?subject=Projet%20Final%20Bounce"
+            method="post"
+            enctype="text/plain"
+            data-contact-form
+            data-reveal
+          >
+            <p class="contact-form__required"><span aria-hidden="true">*</span> Champs obligatoires</p>
+            <div class="contact-form__grid">
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="contact-name">Votre nom <span aria-hidden="true">*</span></label>
+                <input id="contact-name" type="text" name="name" autocomplete="name" autocapitalize="words" maxlength="80" placeholder="Nom ou nom d’artiste" required>
+              </div>
+              <div class="contact-form__field">
+                <label class="contact-form__label" for="contact-email">Votre e-mail <span aria-hidden="true">*</span></label>
+                <input id="contact-email" type="email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="vous@exemple.fr" required>
+              </div>
+              <div class="contact-form__field contact-form__field--wide">
+                <label class="contact-form__label" for="contact-project">Votre projet <span aria-hidden="true">*</span></label>
+                <input id="contact-project" type="text" name="project" maxlength="120" placeholder="Enregistrement, mixage, production…" required>
+              </div>
+              <div class="contact-form__field contact-form__field--wide">
+                <label class="contact-form__label" for="contact-message">Votre message <span aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" minlength="20" maxlength="1800" placeholder="Parlez-nous de votre projet, de vos envies et de vos échéances." required></textarea>
+              </div>
+            </div>
+            <div class="contact-form__footer">
+              <p class="contact-form__note">Le site n’enregistre rien : votre messagerie s’ouvrira avec un brouillon à vérifier puis à envoyer.</p>
+              <button class="button contact-form__submit" type="submit">Préparer mon e-mail <span class="diagonal-arrow" aria-hidden="true">↗</span></button>
+            </div>
+            <p class="contact-form__status" data-contact-status role="status" hidden>Votre brouillon est prêt. Si rien ne s’ouvre, <a data-mailto-fallback href="mailto:contact@finalbounce.studio">ouvrez-le ici</a>.</p>
+            <noscript><p class="contact-form__note">Sans JavaScript, vous pouvez aussi écrire directement à <a href="mailto:contact@finalbounce.studio">contact@finalbounce.studio</a>.</p></noscript>
+          </form>
         </div>
       </section>
     </main>
