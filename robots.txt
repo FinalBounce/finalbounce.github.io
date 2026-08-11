@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://finalbounce.studio/sitemap.xml
+
